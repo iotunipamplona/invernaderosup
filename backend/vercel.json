@@ -5,10 +5,10 @@
         "node_modules",
         ".git",
         ".vercel"
-      ]
+      ],
+      "main": "server.js"
     },
     "routes": {
       "api": "routes"
-    },
-    "main": "server.js"
+    }
   }
