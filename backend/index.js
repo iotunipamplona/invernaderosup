@@ -9,10 +9,8 @@ import humedadi1Route from "./routes/humedadi1.js";
 import humedadi2Route from "./routes/humedadi2.js";
 import humedadi3Route from "./routes/humedadi3.js";
 import co2i1Route from "./routes/co2i1.js";
-import co2i1Route from "./routes/co2i2.js";
-import co2i1Route from "./routes/co2i3.js";
-import temperaturai2Route from "./routes/temperaturai2.js";
-
+import co2i2Route from "./routes/co2i2.js";
+import co2i3Route from "./routes/co2i3.js";
 import cors from "cors";
 
 const app = express();
@@ -31,19 +29,26 @@ mongoose.connection.on("disconnected", () => {
   console.log("mongoDB disconnected!");
 });
 
-//middlewares
-app.use(cors())
+// Middlewares
+app.use(cors());
 app.use(express.json());
-pp.use("/api/user", require("./routes/user"));
-app.use("/api/temperaturai1", require("./routes/temperaturai1"));
-app.use("/api/humedadi1", require("./routes/humedadi1"));
-app.use("/api/co2i1", require("./routes/co2i1"));
-app.use("/api/temperaturai2", require("./routes/temperaturai2"));
-app.use("/api/humedadi2", require("./routes/humedadi2"));
-app.use("/api/co2i2", require("./routes/co2i2"));
-app.use("/api/temperaturai3", require("./routes/temperaturai3"));
-app.use("/api/humedadi3", require("./routes/humedadi3"));
-app.use("/api/co2i3", require("./routes/co2i3"));
+
+// Ruta de bienvenida
+app.get("/", (req, res) => {
+  res.send("¡Bienvenido a mi aplicación!"); // Puedes cambiar este mensaje a lo que desees
+});
+
+// Rutas
+app.use("/api/user", userRoute);
+app.use("/api/temperaturai1", temperaturai1Route);
+app.use("/api/humedadi1", humedadi1Route);
+app.use("/api/co2i1", co2i1Route);
+app.use("/api/temperaturai2", temperaturai2Route);
+app.use("/api/humedadi2", humedadi2Route);
+app.use("/api/co2i2", co2i2Route);
+app.use("/api/temperaturai3", temperaturai3Route);
+app.use("/api/humedadi3", humedadi3Route);
+app.use("/api/co2i3", co2i3Route);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
@@ -56,7 +61,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(5000, () => {
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
   connect();
-  console.log("Connected to backend.");
+  console.log(`Connected to backend on port ${port}.`);
 });
