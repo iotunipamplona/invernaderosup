@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 require("dotenv").config()
-const dbconexion = require('./config/mongo')
+const dbConnect = require('./config/mongo')
 const app = express()
 const cors = require("cors")
 
@@ -17,4 +17,4 @@ app.use("/api", require("./routes"))
 app.listen(port, () => {
     console.log(`Listening at ${port}`)
 })
-dbconexion()
+dbConnect()
