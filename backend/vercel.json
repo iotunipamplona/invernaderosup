@@ -11,6 +11,10 @@
             "src": "/(.*)",
             "dest": "Server.js"
         },
+        {
+            "src": "/api/user(.*)",
+            "dest": "routes/user.js"
+          },
       {
         "src": "/api/temperaturai1(.*)",
         "dest": "routes/temperaturai1.js"
