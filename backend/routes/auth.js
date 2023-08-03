@@ -6,7 +6,7 @@ const { loginCtrl, registerCtrl } = require("../controllers/auth");
 
 /**Crea un registro de usuario */
 
-//TODO http://localhost:5000/api/auth/login
+//TODO http://locallhost:5000/api/auth/login
 //TODO http://localhost:5000/api/auth/registrer
 router.post("/register",validateRegister,registerCtrl );
 router.post("/login",validateLogin, loginCtrl );

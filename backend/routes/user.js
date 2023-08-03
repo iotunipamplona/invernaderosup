@@ -2,7 +2,7 @@ const express =require("express");
 const { getusers, getuser, createuser, updateuser, deleteuser } = require("../controllers/user");
 const router = express.Router();
 const {validatorCreateuser, validatorGetuser} = require("../validators/user")
-/**Lista los usuarios */
+/**Lista los usuaios */
 
 router.get("/",getusers);
 
@@ -11,7 +11,7 @@ router.get("/",getusers);
 router.get("/:id", validatorGetuser, getuser);
 
 /**Crea un registro de usuario */
-router.post("/", validatorCreateuser, createuser);
+router.post("/", validatorCreateuser, createuser); 
 
 
 /**Actualizar un registro de usuario */
