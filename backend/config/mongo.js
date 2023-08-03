@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const uri = process.env.MONGODB_URI; // Asegúrate de que esta variable de entorno esté configurada
+//const uri = process.env.MONGODB_URI; // Asegúrate de que esta variable de entorno esté configurada
 
 const dbConnect = async () => {
   try {
-    await mongoose.connect(uri, {
+    await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
