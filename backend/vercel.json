@@ -1,5 +1,14 @@
 {
     "build": {
-      "command": "node server.js"
-    }
+      "target": "node",
+      "ignore": [
+        "node_modules",
+        ".git",
+        ".vercel"
+      ]
+    },
+    "routes": {
+      "api": "routes"
+    },
+    "main": "server.js"
   }
