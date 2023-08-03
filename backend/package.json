@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "Server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon Server.js",
-    "start": "node Server.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +19,8 @@
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.4",
     "socket.io": "^4.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
