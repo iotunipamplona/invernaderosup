@@ -1,9 +1,6 @@
 const mongoose = require("mongoose");
 require("dotenv").config()
 
-
-const uri = process.env.MONGODB_URI; // Asegúrate de que esta variable de entorno esté configurada
-
 const dbConnect = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
