@@ -1,13 +1,11 @@
 {
-    "build": {
-      "target": "node",
-      "ignore": ["node_modules", ".git"],
-      "main": "server.js"
-    },
-    "routes": [
-      { "src": "/api/(.*)", "dest": "/routes/$1" },
-      { "src": "/(.*)", "dest": "/$1" }
-      
-    ]
-  }
-  
+  "build": {
+    "target": "node",
+    "ignore": ["node_modules", ".git"],
+    "main": "server.js"
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "./routes/index.js" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
