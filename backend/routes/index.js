@@ -1,6 +1,6 @@
 const fs = require('fs')
 const express = require('express')
-const router = express.Router()
+const router = express.Router();
 
 const PATH_ROUTES = __dirname;
 const removeExtension = (fileName) =>{
@@ -16,4 +16,4 @@ fs.readdirSync(PATH_ROUTES).filter((file) =>{
 } )
 
 //j
-module.exports = router
+module.exports = {router};
