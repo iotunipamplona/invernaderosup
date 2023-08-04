@@ -5,7 +5,7 @@
       "main": "server.js"
     },
     "routes": [
-      { "src": "/api/(.*)", "dest": "/backend/routes" },
+      { "src": "/api/(.*)", "dest": "./backend/routes" },
       { "src": "/(.*)", "dest": "/$1" }
     ]
   }
