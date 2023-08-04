@@ -1,14 +1,11 @@
 {
     "build": {
       "target": "node",
-      "ignore": [
-        "node_modules",
-        ".git",
-        ".vercel"
-      ],
+      "ignore": ["node_modules", ".git"],
       "main": "server.js"
     },
-    "routes": {
-      "api": "routes"
-    }
+    "routes": [
+      { "src": "/api/(.*)", "dest": "/api/$1" },
+      { "src": "/(.*)", "dest": "/$1" }
+    ]
   }
